@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+
+  *{
+    font-family: 'Bebas Neue', sans-serif !important;
+
+  }
+  body{
+    /* background-color: rgb(218, 215, 215); */
+    font-family: sans-serif;
+    background-image: url("../assets/fondo-deportes.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+
+.container-register{
+    position: relative;
+    background-color: white;
+    width: 38%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    /* box-shadow: 12px 18px 5px; */
+    margin-top: 50px;
+    height: 500px;
+}
+
+.container-register form{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-register label{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    /* font-family: 'Bebas Neue', sans-serif !important; */
+
+}
+
+.container-register input:nth-of-type(4) {
+    margin-bottom: 50px;
+}
+
+.container-register .entrada{
+    border-radius: 5px;
+    padding: 10px;
+    padding-right: 12rem;
+    width: 100%;
+}
+
+.container-register .input-register{
+    border-radius: 5px;
+    padding: 5px;
+    padding-right: 1rem;
+    width: 30%;
+}
+
+.container-register .click-submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: center;
+}
+
+.container-register .click-submit input{
+    margin-left: 20px;
+    margin-bottom: 10px;
+    background-color: rgb(24, 11, 82);
+    color: white;
+    padding: 10px;
+}
+
+.entrada:focus{
+    background-color: rgb(219, 237, 243);
+    border-color: red;
+}
+
+.container-register form > *[required]:valid{
+    background-color: rgb(219, 237, 243);
+    border-color: lightgreen;
+    border-color: rgb(104, 187, 104);
+}
+
+.container-register input[type="submit"]:hover{
+    cursor: pointer;
+    opacity: 90%;
+}
+
+
+img{
+    height: 220px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -50px;
+    margin-top: -50px;
+}
+
+.container-register .click-submit a{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 25px;
+    color: #2b2b32;
+
+}
+
+.container-register .entrada[type="password"] {
+    background-position: right center; /* Alinea el ícono del "ojo" a la derecha del campo */
+    background-repeat: no-repeat;
+    padding-right: 25px; /* Agrega espacio para el ícono del "ojo" */
+}
+
+.container-register .click-submit input{
+    font-size: 20px;
+    background-color: #2b2b32;;
+}
+
+.input-group-append button{
+    margin-top: 10px;
+    /* float: right; */
+    margin-bottom: 10px;
+}
+
+.imagen-registro{
+    margin-top: -85px;
+}
+
+.ver-2{
+    height: 720px;
+}
+
+form .mostrar-pass{
+    margin-bottom: 20px;
+    margin-top: -40px;
+    font-size: 20px;
+}
+
+.container-register input{
+    font-family: sans-serif !important;
+}
+
+.container-register .input-register{
+    font-family: 'Bebas Neue', sans-serif !important;
+    letter-spacing: 1px;
+}

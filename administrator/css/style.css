@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Playfair', serif; */
+    font-family: 'Bebas Neue', sans-serif !important;
+}
+
+.header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Alinea los íconos de menú en la parte derecha */
+}
+
+.header img {
+    width: 250px;
+    height: auto; /* Ajusta la altura automáticamente */
+}
+
+.header h1{
+    /* width: 10%; */
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 250px;
+    /* text-decoration: underline; */
+}
+
+nav {
+    display: flex !important;
+    position: relative;
+    justify-content: flex-end; /* Centra los íconos de menú horizontalmente */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center; /* Centra verticalmente los enlaces */
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Centra los enlaces horizontalmente */
+    padding: 0;
+}
+
+.nav-links ul li {
+    margin: 10px 0; /* Espaciado vertical entre elementos li */
+    margin-left: 40px;
+}
+
+.nav-links ul li:nth-of-type(3){
+    margin-right: 50px;
+}
+
+
+.nav-links ul li a{
+    color: #2b2b32;
+    text-decoration: none;
+    font-size: 40px;
+}
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #000000;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.footer{
+    width:100%;
+    /* background: linear-gradient(rgb(63, 216, 211),rgb(0, 0, 0)); */
+    text-align: center;
+    padding: 50px 0;
+}
+.footer h4{
+    font-size: 30px;
+}
+nav .fa{
+    display: none;
+}
+
+.add-user{
+    margin-top: 20px;
+    font-size: 25px !important;
+    padding: 8px 20px !important;
+}
+
+.users-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 70px;
+    /* text-decoration: underline; */
+    font-style: oblique;
+}
+
+.users-intro{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 25px;
+}
+
+table th{
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+table td{
+    font-size: 22px;
+}
+
+@media (max-width: 700px){
+    .text-box h1{
+        font-size: 35px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;  
+        background: #000000;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+
+/* SECCIONES */
+
+
+.menu-secciones{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 80vh;
+}
+
+
+.menu-horizontal{
+    font-size: 40px;
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.menu-horizontal>li {
+    background-color: lightgray;
+    display: block;
+    padding: 15px 30px;
+    color: #18171c;
+    text-decoration: none;
+    margin-left: 20px;
+    border-radius: 20px;
+}
+
+.menu-horizontal>li>a{
+    color: #18171c;
+}
+
+.menu-horizontal>li>a:hover{
+    color: white;
+}
+
+.menu-horizontal>li:hover {
+    background-color: #18171c;
+    color: white;
+    border-radius: 10px;
+}
+
+.menu-vertical {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 125px;
+    background-color: #18171c;
+}
+
+.menu-horizontal li:hover .menu-vertical {
+    display: block;
+}
+
+.menu-vertical li:hover {
+    background-color: #106cfc;
+    border-radius: 10px;
+}
+
+.menu-vertical li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 15px 15px 20px;
+}
