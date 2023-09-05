@@ -1,5 +1,9 @@
 <?php
 require '../config/db.php';
+
+header('Cache-Control: no-cache, must-revalidate');
+header('Expires: Sat, 1 Jul 2000 05:00:00 GMT');
+
 if (!empty($_SESSION["id"])) {
     
     $user_id = $_SESSION["id"];
@@ -31,7 +35,7 @@ if (!empty($_SESSION["id"])) {
 </head>
 <body>
     <section class="header">
-        <img src="../assets/sportX.png" alt="">
+        <img src="../assets/logo sportX-2.png" alt="">
         <h1>WELCOME <?php echo $row["username"];?></h1>
         <nav>
             <div class="nav-links" id="navlinks">

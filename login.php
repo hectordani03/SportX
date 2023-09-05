@@ -15,16 +15,19 @@
 </head>
 
 <body>
-    
-    <div class="container-register">
-        <img src="assets/sportX.png" alt="logo-sportX">
-        <form method="post">
-            <label for="username">Username:</label>
-            <input class="entrada" type="text" id="username" name="username" required>
-
+    <section class="banner">
+        <video muted autoplay loop>
+            <source src="assets/baloncesto-video.mp4" type="video/mp4">
+        </video>
+        <div class="container-register">
+            <img class="logo" src="assets/logo sportX-2.png" alt="logo-sportX">
+            <form method="post">
+                <label for="username">Username:</label>
+                <input class="entrada" type="text" id="username" name="username" required>
+                
             <label for="password">Password:</label>
             <input class="entrada" type="password" id="pass" name="password" required>
-
+            
             <div class="input-group-append">
                 <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="bi bi-eye icon"></span> </button>
             </div>
@@ -34,10 +37,11 @@
                 <a href="register.php">Unregistered?</a>
                 <input class="input-register" type="submit" name="login" value="LOG IN">
             </div>
-
-        </form>
-    </div>
-
+            
+            </form>
+        </div>
+    </section>
+    
     <?php
     require 'config/db.php';
     if (isset($_POST["login"])) {
@@ -52,7 +56,7 @@
             if (password_verify($password, $row["password"])) {
                 $_SESSION["id"] = $row["id"];
                 if ($row["role"] != "user") {
-                    header("Location: administrator/index.php");
+                    header("Location: administrator/inicio.php");
                 } else {
                     header("Location: index.php");
                 }

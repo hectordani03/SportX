@@ -15,19 +15,19 @@ html {
     font-family: 'Bebas Neue', sans-serif !important;
 
   }
-  body{
-    /* background-color: rgb(218, 215, 215); */
+  /* body{
+    /* background-color: rgb(218, 215, 215);
     font-family: sans-serif;
     background-image: url("../assets/fondo-deportes.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-  }
+  } */
 
 
 .container-register{
     position: relative;
-    background-color: white;
+    /* background-color: white; */
     width: 38%;
     margin-left: auto;
     margin-right: auto;
@@ -51,6 +51,7 @@ html {
     margin-bottom: 10px;
     font-size: 1.5rem;
     /* font-family: 'Bebas Neue', sans-serif !important; */
+    color: white;
 
 }
 
@@ -59,10 +60,15 @@ html {
 }
 
 .container-register .entrada{
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px;
     padding-right: 12rem;
     width: 100%;
+    border-color: white;
+    border-top: white;
+    border-left: white;
+    border-bottom-color: white;
+    box-shadow: 4px 5px gray;
 }
 
 .container-register .input-register{
@@ -89,13 +95,11 @@ html {
 
 .entrada:focus{
     background-color: rgb(219, 237, 243);
-    border-color: red;
+    /* border-color: red; */
 }
 
 .container-register form > *[required]:valid{
     background-color: rgb(219, 237, 243);
-    border-color: lightgreen;
-    border-color: rgb(104, 187, 104);
 }
 
 .container-register input[type="submit"]:hover{
@@ -104,9 +108,9 @@ html {
 }
 
 
-img{
-    height: 220px;
-    width: 400px;
+.logo{
+    height: 280px;
+    width: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,8 +125,7 @@ img{
     align-items: center;
     margin-right: 20px;
     font-size: 25px;
-    color: #2b2b32;
-
+    color: white;
 }
 
 .container-register .entrada[type="password"] {
@@ -133,13 +136,15 @@ img{
 
 .container-register .click-submit input{
     font-size: 20px;
-    background-color: #2b2b32;;
+    background-color: #2b2b32;
 }
 
 .input-group-append button{
     margin-top: 10px;
-    /* float: right; */
+    float: right;
     margin-bottom: 10px;
+    border-radius: 10px;
+    border-color: white;
 }
 
 .imagen-registro{
@@ -158,9 +163,35 @@ form .mostrar-pass{
 
 .container-register input{
     font-family: sans-serif !important;
+    font-weight: bold !important;
 }
 
 .container-register .input-register{
     font-family: 'Bebas Neue', sans-serif !important;
     letter-spacing: 1px;
+}
+
+.zapato-1{
+    position: relative;
+    top: -300px;
+    width: 200px;
+    height: auto;
+}
+
+.zapato-2{
+    position: relative;
+    top: -200px;
+    left: 50px;
+    width: 250px;
+    height: auto;
+}
+
+
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 90%; */
+    object-fit: cover;
 }
