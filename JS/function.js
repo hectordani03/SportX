@@ -2,18 +2,20 @@
 function modify_user(mod_users) {
   array_mod = mod_users.split(",");
   $("#mod_id_user").val(array_mod[0]);
-  $("#mod_username").val(array_mod[1]);
+  $("#mod_name").val(array_mod[1]);
   $("#mod_email").val(array_mod[2]);
-  $("#mod_role").val(array_mod[3]);
+  $("#mod_pnumber").val(array_mod[3]);
+  $("#mod_role").val(array_mod[4]);
 }
 
 // DELETE USER ON MODAL
 function delete_user(del_users) {
   array_del = del_users.split(",");
   $("#del_id_user").val(array_del[0]);
-  $("#del_username").val(array_del[1]);
+  $("#del_name").val(array_del[1]);
   $("#del_email").val(array_del[2]);
-  $("#del_role").val(array_del[3]);
+  $("#del_pnumber").val(array_del[3]);
+  $("#del_role").val(array_del[4]);
 }
 
 $("#modify").click(function () {
@@ -24,7 +26,7 @@ $("#modify").click(function () {
     data: modify,
     cache: false,
     success: function (variable) {
-      $("#adm").load("../administrator/index.php #adm");
+      $("#adm").load("../administrator/users.php #adm");
       $("#modifyuser").hide();
       $("body").removeClass("modal-open");
       $(".modal-backdrop").hide();
@@ -39,7 +41,7 @@ $("#add").click(function () {
     type: "POST",
     data: add,
     success: function (variable) {
-      $("#adm").load("../administrator/index.php #adm");
+      $("#adm").load("../administrator/users.php #adm");
       $("#adduser").hide();
       $("body").removeClass("modal-open");
       $(".modal-backdrop").hide();
@@ -54,7 +56,7 @@ $("#delete").click(function () {
     type: "POST",
     data: del,
     success: function (variable) {
-      $("#adm").load("../administrator/index.php #adm");
+      $("#adm").load("../administrator/users.php #adm");
       $("#deleteuser").hide();
       $("body").removeClass("modal-open");
       $(".modal-backdrop").hide();
