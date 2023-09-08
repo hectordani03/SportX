@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./assets/logo sportX-2.png">
+
     <title>LOG IN</title>
 </head>
 
@@ -22,41 +26,42 @@
         <div class="container-register">
             <img class="logo" src="assets/logo sportX-2.png" alt="logo-sportX">
             <form method="post">
-                <label for="username">Username:</label>
-                <input class="entrada" type="text" id="username" name="username" required>
-                
-            <label for="password">Password:</label>
-            <input class="entrada" type="password" id="pass" name="password" required>
-            
-            <div class="input-group-append">
-                <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="bi bi-eye icon"></span> </button>
-            </div>
+                <label for="name">Name:</label>
+                <input class="entrada" type="text" id="name" name="name" required>
 
-            <div class="click-submit">
-                <a href="#">Forgot password?</a>
-                <a href="register.php">Unregistered?</a>
-                <input class="input-register" type="submit" name="login" value="LOG IN">
-            </div>
-            
+                <label for="password">Password:</label>
+                <input class="entrada" type="password" id="pass" name="password" required>
+
+                <div class="input-group-append">
+                    <button id="show_password" class="btn btn-primary" type="button" onclick="showPassword()"> <span class="bi bi-eye-slash icon"></span> </button>
+                </div>
+
+                <div class="click-submit">
+                    <a href="#">Forgot password?</a>
+                    <a href="register.php">Unregistered?</a>
+                    <input class="input-register" type="submit" name="login" value="LOG IN">
+                </div>
+
             </form>
         </div>
     </section>
-    
+
     <?php
     require 'config/db.php';
     if (isset($_POST["login"])) {
-        $username = $_POST["username"];
+        $name = $_POST["name"];
         $password = $_POST["password"];
-        $check_user = $conne->prepare("SELECT * FROM users WHERE BINARY username = ?");
-        $check_user->execute([$username]);
-        if (empty($_POST["username"]) or empty($_POST["password"])) {
+        $check_user = $conne->prepare("SELECT * FROM users WHERE BINARY name = ?");
+        $check_user->execute([$name]);
+        if (empty($_POST["name"]) or empty($_POST["password"])) {
             echo 'Fill out the sections first';
         } elseif ($check_user->rowCount() > 0) {
             $row = $check_user->fetch(PDO::FETCH_ASSOC);
             if (password_verify($password, $row["password"])) {
                 $_SESSION["id"] = $row["id"];
+                $_SESSION["role"] = $row["role"];
                 if ($row["role"] != "user") {
-                    header("Location: administrator/inicio.php");
+                    header("Location: administrator/index.php");
                 } else {
                     header("Location: index.php");
                 }
@@ -68,15 +73,17 @@
         }
     }
     ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
-        function mostrarPassword() {
-            var cambio = document.getElementById("pass");
-            if (cambio.type == "password") {
-                cambio.type = "text";
-                $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        //-----------------------------PASSWORD CHECK LOGIN---------------------
+        function showPassword() {
+            var change = document.getElementById("pass");
+            if (change.type == "password") {
+                change.type = "text";
+                $(".icon").removeClass("bi bi-eye-slash").addClass("bi bi-eye");
             } else {
-                cambio.type = "password";
-                $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+                change.type = "password";
+                $(".icon").removeClass("bi bi-eye").addClass("bi bi-eye-slash");
             }
         }
     </script>
