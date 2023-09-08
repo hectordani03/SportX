@@ -34,6 +34,29 @@ if (!empty($_SESSION["id"])) {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    // Obtenemos el dominio y el puerto del sitio web
+    const domain = window.location.hostname;
+    const port = window.location.port;
+
+    // Generamos una cadena de consulta con el dominio y el puerto
+    const query = "?domain=" + domain;
+    if (port) {
+      query += "&port=" + port;
+    }
+
+    // Creamos una función para borrar la caché
+    const clearCache = () => {
+      // Enviamos una solicitud POST al script de borrado de caché
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", "/clear-cache.php" + query);
+      xhr.send();
+    };
+
+    // Ejecutamos la función de borrado de caché en un intervalo de tiempo determinado
+    setInterval(clearCache, 60000); // 60 segundos
+  </script>
 
 </head>
 <body>
@@ -48,18 +71,22 @@ if (!empty($_SESSION["id"])) {
                         <div class="dropdown-content ver-1">
                             <ul>
                                 <div class="parte-izquierda">
-                                    <li class="temas">Calzado</li>
-                                    <li class="subtemas"><a href="#"></a>Hombre</li>
-                                    <li class="subtemas"><a href="#"></a>Mujer</li>
-                                    <li class="subtemas"><a href="#"></a>Niño</li>
+                                    <li class="temas">Footwear</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
                                     <li class="temas"><a href="#"></a>Jerseys</li>
-                                    <li class="subtemas"><a href="#"></a>Hombre</li>
-                                    <li class="subtemas"><a href="#"></a>Mujer</li>
-                                    <li class="subtemas"><a href="#"></a>Niño</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
                                 </div>
                                 <div class="parte-derecha">
-                                    <li class="temas"><a href="#"></a>Balones</li>
-                                    <li class="temas"><a href="#"></a>Accesorios</li>
+                                    <li class="temas"><a href="#"></a>Bottoms</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Balls</li>
+                                    <li class="temas"><a href="#"></a>Accessories</li>
                                 </div>
                                 <!-- <li><a href="#"></a></li> -->
                             </ul>
@@ -76,43 +103,184 @@ if (!empty($_SESSION["id"])) {
                         </div>
                     </li>
                     <li class="dropdown"><a href="../index.php">Basketball</a>
-                        <div class="dropdown-content-2 ver-2">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus magnam nemo repellat facere reprehenderit, eius sequi ipsum repudiandae distinctio architecto voluptatibus perspiciatis cumque! Expedita officia nesciunt, excepturi assumenda ipsam eveniet.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, eligendi hic sapiente fugiat quia dolores expedita ad? Sequi deserunt, quisquam eius iure voluptas vero omnis perferendis fugiat, iste explicabo dolores.
-                            </p>
+                        <div class="dropdown-content ver-2">
+                        <ul>
+                                <div class="parte-izquierda">
+                                    <li class="temas">Footwear</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Jerseys</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                </div>
+                                <div class="parte-derecha">
+                                    <li class="temas"><a href="#"></a>Bottoms</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Balls</li>
+                                    <li class="temas"><a href="#"></a>Accessories</li>
+                                </div>
+                                <!-- <li><a href="#"></a></li> -->
+                            </ul>
+                            <div class="imagen-dropdown-soccer-1">
+                                <div class="imagen-soccer-1">
+                                    <img src="../assets/futbol/jordan-2.1.webp" alt="">
+                                    <img src="../assets/futbol/jordan-2.webp" alt="">
+                                </div>
+                                <div class="imagen-soccer-2 imagen-basket-2">
+                                    <img src="../assets/futbol/jersey-basket-1.webp" alt="">
+                                    <img src="../assets/futbol/jersey-basket-2.webp" alt="">
+                                </div>
+                            </div>
                         </div>
                     </li>                    
                     <li class="dropdown"><a href="../index.php">Tennis</a>
-                        <div class="dropdown-content-3 ver-3">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus magnam nemo repellat facere reprehenderit, eius sequi ipsum repudiandae distinctio architecto voluptatibus perspiciatis cumque! Expedita officia nesciunt, excepturi assumenda ipsam eveniet.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, eligendi hic sapiente fugiat quia dolores expedita ad? Sequi deserunt, quisquam eius iure voluptas vero omnis perferendis fugiat, iste explicabo dolores.
-                            </p>
+                        <div class="dropdown-content ver-3">
+                        <ul>
+                                <div class="parte-izquierda">
+                                    <li class="temas">Footwear</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Clothes</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                </div>
+                                <div class="parte-derecha">
+                                    <li class="temas"><a href="#"></a>Rackets</li>
+                                    <li class="subtemas"><a href="#"></a>Adults</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Balls</li>
+                                    <li class="temas"><a href="#"></a>Accessories</li>
+                                </div>
+                                <!-- <li><a href="#"></a></li> -->
+                            </ul>
+                            <div class="imagen-dropdown-soccer-1">
+                                <div class="imagen-soccer-1">
+                                    <img src="../assets/futbol/raqueta-1.webp" alt="">
+                                    <img src="../assets/futbol/raqueta-2.webp" alt="">
+                                </div>
+                                <div class="imagen-soccer-2">
+                                    <img src="../assets/futbol/mochila-tenis-2.1.webp" alt="">
+                                    <img src="../assets/futbol/mochila-tenis-1.webp" alt="">
+                                </div>
+                            </div>
                         </div>
                     </li>                    
                     <li class="dropdown"><a href="../index.php">Swimming</a>
-                        <div class="dropdown-content-4 ver-4">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus magnam nemo repellat facere reprehenderit, eius sequi ipsum repudiandae distinctio architecto voluptatibus perspiciatis cumque! Expedita officia nesciunt, excepturi assumenda ipsam eveniet.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, eligendi hic sapiente fugiat quia dolores expedita ad? Sequi deserunt, quisquam eius iure voluptas vero omnis perferendis fugiat, iste explicabo dolores.
-                            </p>
+                        <div class="dropdown-content ver-4">
+                        <ul>
+                                <div class="parte-izquierda">
+                                    <li class="temas">Footwear</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Swimsuit</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                </div>
+                                <div class="parte-derecha">
+                                    <li class="temas"><a href="#"></a>Googles</li>
+                                    <li class="subtemas"><a href="#"></a>Adults</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Accessories</li>
+                                </div>
+                                <!-- <li><a href="#"></a></li> -->
+                            </ul>
+                            <div class="imagen-dropdown-soccer-1">
+                                <div class="imagen-soccer-1">
+                                    <img src="../assets/futbol/googles-1.webp" alt="">
+                                    <img src="../assets/futbol/googles-2.webp" alt="">
+                                </div>
+                                <div class="imagen-soccer-2">
+                                    <img src="../assets/futbol/traje-natacion-1.webp" alt="">
+                                    <img src="../assets/futbol/traje-natacion-2.webp" alt="">
+                                </div>
+                            </div>
                         </div>
                     </li>                    
                     <li class="dropdown"><a href="../index.php">Baseball</a>
-                        <div class="dropdown-content-5 ver-5">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus magnam nemo repellat facere reprehenderit, eius sequi ipsum repudiandae distinctio architecto voluptatibus perspiciatis cumque! Expedita officia nesciunt, excepturi assumenda ipsam eveniet.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, eligendi hic sapiente fugiat quia dolores expedita ad? Sequi deserunt, quisquam eius iure voluptas vero omnis perferendis fugiat, iste explicabo dolores.
-                            </p>
+                        <div class="dropdown-content ver-5">
+                        <ul>
+                                <div class="parte-izquierda">
+                                    <li class="temas">Footwear</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Child</li>
+                                    <li class="temas"><a href="#"></a>Jerseys</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Child</li>
+                                </div>
+                                <div class="parte-derecha">
+                                    <li class="temas"><a href="#"></a>Bats</li>
+                                    <li class="subtemas"><a href="#"></a>Adults</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Balls</li>
+                                    <li class="temas"><a href="#"></a>Accesorios</li>
+                                </div>
+                                <!-- <li><a href="#"></a></li> -->
+                            </ul>
+                            <div class="imagen-dropdown-soccer-1">
+                                <div class="imagen-soccer-1">
+                                    <img src="../assets/futbol/jersey-beisbol-1.webp" alt="">
+                                    <img src="../assets/futbol/jersey-beisbol-2.webp" alt="">
+                                </div>
+                                <div class="imagen-soccer-2">
+                                    <img src="../assets/futbol/gorra-1.webp" alt="">
+                                    <img src="../assets/futbol/gorra-2.webp" alt="">
+                                </div>
+                            </div>
                         </div>
                     </li>                    
-                    <li class="dropdown"><a href="../index.php">Golf</a>
-                        <div class="dropdown-content-6 ver-6">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus magnam nemo repellat facere reprehenderit, eius sequi ipsum repudiandae distinctio architecto voluptatibus perspiciatis cumque! Expedita officia nesciunt, excepturi assumenda ipsam eveniet.
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, eligendi hic sapiente fugiat quia dolores expedita ad? Sequi deserunt, quisquam eius iure voluptas vero omnis perferendis fugiat, iste explicabo dolores.
-                            </p>
+                    <li class="dropdown"><a href="../index.php">Football</a>
+                        <div class="dropdown-content ver-6">
+                        <ul>
+                                <div class="parte-izquierda">
+                                    <li class="temas">Footwear</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Jerseys</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                </div>
+                                <div class="parte-derecha">
+                                    <li class="temas"><a href="#"></a>Bottoms</li>
+                                    <li class="subtemas"><a href="#"></a>Man</li>
+                                    <li class="subtemas"><a href="#"></a>Woman</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Balls</li>
+                                    <li class="temas"><a href="#"></a>Protections</li>
+                                    <li class="subtemas"><a href="#"></a>Adults</li>
+                                    <li class="subtemas"><a href="#"></a>Kids</li>
+                                    <li class="temas"><a href="#"></a>Accesorios</li>
+                                </div>
+                                <!-- <li><a href="#"></a></li> -->
+                            </ul>
+                            <div class="imagen-dropdown-soccer-1">
+                                <div class="imagen-soccer-1">
+                                    <img src="../assets/futbol/jersey-futbol-americano-1.webp" alt="">
+                                    <img src="../assets/futbol/jersey-futbol-americano-2.webp" alt="">
+                                </div>
+                                <div class="imagen-soccer-2">
+                                    <img src="../assets/futbol/bufanda-1.webp" alt="">
+                                    <img src="../assets/futbol/bufanda-2.webp" alt="">
+                                </div>
+                            </div>
                         </div>
                     </li>                </ul>
                 <div class="iconos-cabecera">
+                    <li><a href="#"><i class="bi bi-search"></i></li></a>
                     <li><a href="./inicio-admin.php"><i class="bi bi-person-circle"></i></li></a>
                     <li><a href="../logout.php"><i class="bi bi-box-arrow-right"></i></li></a>
+
                 </div>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>

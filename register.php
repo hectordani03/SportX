@@ -10,36 +10,41 @@
 
 <body>
 
-    <div class="container-register ver-2">
-        <img class="imagen-registro" src="assets/sportX.png" alt="logo-sportX">
-
-        <form action="" method="post">
-            <label for="username">Name</label>
-            <input class="entrada" type="text" id="username" name="username" required>
-
-            <label for="email">Email</label>
-            <input class="entrada" type="email" id="email" name="email" required>
-
-            <label for="password">Password</label>
-            <input class="entrada" type="password" id="pass" name="password" required>
-
-            <label for="confirmpassword">Confirm Password</label>
-            <input class="entrada" type="password" id="pass2" name="confirmpassword" required>
-
-            <div style="margin-right: 145px" class="form-group pb-2 mostrar-pass">
-                <input type="checkbox" id="muestrapassword" />&nbsp;&nbsp;Show Password 
-            </div>
-
-            <div class="click-submit">
-                <a href="#">Forgot password?</a>
-                <a href="login.php">Already registered?</a>
-                <input class="input-register" type="submit" name="register" value="REGISTER">
-            </div>
+<section class="banner">
+        <video muted autoplay loop>
+            <source src="assets/baloncesto-video.mp4" type="video/mp4">
+        </video>
+        <div class="container-register ver-2">
+            <img class="imagen-registro" src="assets/sportX.png" alt="logo-sportX">
             
-        </form>
+            <form action="" method="post">
+                <label for="username">Name</label>
+                <input class="entrada" type="text" id="username" name="username" required>
+                
+                <label for="email">Email</label>
+                <input class="entrada" type="email" id="email" name="email" required>
+                
+                <label for="password">Password</label>
+                <input class="entrada" type="password" id="pass" name="password" required>
+                
+                <label for="confirmpassword">Confirm Password</label>
+                <input class="entrada" type="password" id="pass2" name="confirmpassword" required>
+                
+                <div style="margin-right: 145px" class="form-group pb-2 mostrar-pass">
+                    <input type="checkbox" id="muestrapassword" />&nbsp;&nbsp;Show Password 
+                </div>
+                
+                <div class="click-submit">
+                    <a href="#">Forgot password?</a>
+                    <a href="login.php">Already registered?</a>
+                    <input class="input-register" type="submit" name="register" value="REGISTER">
+                </div>
+                
+            </form>
+            
+        </div>
+    </section>
         
-    </div>
-
     <?php
     require 'config/db.php';
 

@@ -93,7 +93,7 @@ nav {
     flex-grow: 2;
     margin-right: 30px;
     color: white;
-    font-size: 40px;
+    font-size: 35px;
     list-style: none;
     align-items: center;
     justify-content: center;
@@ -111,7 +111,7 @@ nav {
 
 .nav-links ,.iconos-cabecera li:nth-of-type(2){
     /* margin-left: -10px; */
-    font-size: 45px;
+    font-size: 35px;
 }
 
 .nav-links ul li:nth-of-type(3){
@@ -126,7 +126,7 @@ nav {
 .nav-links ul li a{
     color: white;
     text-decoration: none;
-    font-size: 35px;
+    font-size: 32px;
 }
 .nav-links ul li::after{
     content: '';
@@ -449,27 +449,27 @@ video{
 }
 
 .header-inicio .ver-1{
-    transform: translateX(-24%); /* Centra el menú respecto al elemento padre */
+    transform: translateX(-22.5%); /* Centra el menú respecto al elemento padre */
 }
 
 .header-inicio .ver-2{
-    transform: translateX(-33%); /* Centra el menú respecto al elemento padre */
+    transform: translateX(-31%); /* Centra el menú respecto al elemento padre */
 }
 
 .header-inicio .ver-3{
-    transform: translateX(-46%); /* Centra el menú respecto al elemento padre */
+    transform: translateX(-43%); /* Centra el menú respecto al elemento padre */
 }
 
 .header-inicio .ver-4{
-    transform: translateX(-55%); /* Centra el menú respecto al elemento padre */
+    transform: translateX(-51.5%); /* Centra el menú respecto al elemento padre */
 }
 
 .header-inicio .ver-5{
-    transform: translateX(-66%); /* Centra el menú respecto al elemento padre */
+    transform: translateX(-62.5%); /* Centra el menú respecto al elemento padre */
 }
 
 .header-inicio .ver-6{
-    transform: translateX(-77%); /* Centra el menú respecto al elemento padre */
+    transform: translateX(-73%); /* Centra el menú respecto al elemento padre */
 }
 
 .header-inicio .dropdown-content .calzado {
@@ -542,14 +542,14 @@ video{
     width: 25%;
 } */
 
-  .parte-izquierda, .parte-derecha {
+  .header-inicio .dropdown-content .parte-izquierda, .parte-derecha {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
   }
 
-  .parte-derecha{
+  .header-inicio .dropdown-content .parte-derecha{
     margin-left: 50px;
     margin-top: -10px;
   }
@@ -567,6 +567,17 @@ video{
   .header-inicio .dropdown-content .imagen-dropdown-soccer-1 img{
     margin-right: 50px;
     /* width: 100%; */
+  }
+
+  .header-inicio .dropdown-content .imagen-dropdown-soccer-1 .imagen-basket-2 img{
+    height: 370px;
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .header-inicio .dropdown-content .imagen-dropdown-soccer-1{
+    /* margin-right: 50px; */
+
   }
 
 
@@ -591,43 +602,24 @@ video{
 
 }
 
+.header-inicio .nav-links-2 .iconos-cabecera{
+    margin-left: -10px;
+}
 
-.header-inicio .dropdown-content .imagen-soccer-2 img,
-.header-inicio .dropdown-content .imagen-soccer-1 img{
+.header-inicio img:nth-of-type(1){
+    margin-bottom: 10px;
+}
+/* 
+.header-inicio .imagen-soccer-1 img:nth-of-type(1){
+    color: #000000;
     opacity: 1;
-    transition: 0.2s opacity linear;
-  }
+    transition: 1s opacity ease-in-out;
+}
 
-  
-.header-inicio .dropdown-content .imagen-soccer-2 img:hover,
-.header-inicio .dropdown-content .imagen-soccer-1 img:hover{
+
+.header-inicio .imagen-soccer-1 img:nth-of-type(2):hover{
     opacity: 0.7;
-  }
-
-
-  
-
-  
-  
-
-
-
-
+} */
 
 
 /* ------------------------------------------------------------------------------------------------------------------- */
-
-/* 
-
-.nav-links ul li::after{
-    content: '';
-    width: 0%;
-    height: 2px;
-    background: white;
-    display: block;
-    margin: auto;
-    transition: 0.5s;
-}
-.nav-links ul li:hover::after{
-    width: 100%;
-} */
