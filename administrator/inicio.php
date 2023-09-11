@@ -12,7 +12,7 @@
         <source src="../assets/SportX video.mp4" type="video/mp4">
     </video>
     <?php
-    include 'template/cabecera-inicio.php';
+    include './template/cabecera.php';
     ?>
 </section>
 
