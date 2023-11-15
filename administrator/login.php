@@ -77,7 +77,7 @@
             $row = $check_user->fetch(PDO::FETCH_ASSOC);
             if (password_verify($password, $row["password"])) {
                 $_SESSION["id"] = $row["id"];
-                header("Location: ../index.php");
+                header("Location: ./index.php");
             } else {
 
                 //----------------------------MENSAJE--------------------------------

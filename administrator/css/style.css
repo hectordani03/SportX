@@ -14,12 +14,15 @@
     --typeBasePrimary: Futura;
     --typeBaseFallback: sans-serif;
 }
+html,
+body{
+    height: 100%;
+}
 
 .header {
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
-    /* background-color: lightgray; */
     display: flex;
     align-items: center;
     justify-content: space-between; /* Alinea los íconos de menú en la parte derecha */
@@ -624,8 +627,6 @@ main{
 .header{
     position: absolute;
     background-color: #18171c;
-    /* height: 100px; */
-    height: 100%;
     width: 7%;
     display: flex;
     flex-direction: column;
@@ -744,4 +745,247 @@ main{
     font-family: sans-serif !important;
     font-weight: bold;
     letter-spacing: -1.5px;
+}
+/* 
+#chart_div{
+   width: 30%;
+   margin-left: auto;
+   margin-right: auto;
+} */
+/* 
+.graphic-card{
+    position: relative;
+    width: 100%;
+} */
+
+
+#piechart{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CARDS */
+
+.cards-content{
+    text-align: center;
+}
+
+
+.cards-content:hover,
+.graphic-card:hover{
+    transform: scale(1.1,1.1);
+    z-index: 999;
+    transform: 0.5 ease;
+}
+
+.cards-content svg{
+    margin-top: 10px;
+    font-size: 50px;
+    margin-bottom: 10px;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cards-content svg:hover{
+    fill: #26252a !important;
+    transition: 0.5s ease;
+}
+
+.user-btn{
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+    top: -90px;
+    right: 10px;
+    margin-top: 10px;
+    max-width: 15%;
+    background-color: #18171c;
+    border: none;
+}
+
+.user-btn svg{
+    float: left;
+    font-size: 30px;
+    color: white;
+}
+
+.user-btn span{
+    float: right;
+    margin-right: 7px;
+    margin-left: 7px;
+    font-family: sans-serif !important;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+}
+
+.products-count{
+    text-align: start;
+    margin-left: 20px;
+}
+
+.graphic-card{
+    min-height: 500px;
+    max-height: 500px;
+}
+
+.graphic-card > h1{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -50px;
+    z-index: 999;
+}
+
+.graphic-card > svg{
+    text-align: center;
+    font-size: 50px;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.dark-mode{
+    border-radius: 20px;
+    position: absolute;
+    top: -80px;
+    right: 240px;
+    margin-top: 10px;
+    margin-left: 70px;
+    /* width: 13%; */
+    border: none;
+}
+
+.grafica #piechart rect{
+    fill: none !important;
+}
+
+.dark-mode #moon,
+.dark-mode #sun{
+    z-index: 999;
+    color: black;
+}
+
+
+
+/* The switch - the box around the slider */
+.switch-container {
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch-container input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .switch-container .slider {
+    --background: linear-gradient(to right, #090613ef, #18151f);
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: var(--background); */
+    background-color: lightgray;
+    transition: background-color 0.5s;
+    border-radius: 30px;
+  }
+  
+  .switch-container .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 15px -4px 0px 15px #f8ea27;
+    background: var(--background);
+    transition: transform 0.5s, box-shadow 0.5s;
+    border: var(--background);
+  }
+  
+  .switch-container input:checked + .slider {
+    background:var(--background);
+    border: var(--background);
+  }
+  
+  .switch-container input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 8px -4px 0px 0px #f8f8f4;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 7%;
+    height: 100%; /* Ajusta esta altura según el diseño de tu header */
+    background-color: black;
+    z-index: 1000; /* Asegura que el header quede por encima de otros elementos */
+   }
+   
+   header .header{
+    position: fixed;
+    top: 0px; /* Ajusta este valor según la altura del header */
+    left: 0;
+    width: 150px; /* Ajusta este valor según el ancho deseado del header lateral */
+    height: calc(100% - 0px); /* Ajusta este valor según la altura del header */
+    background-color: #222;
+   }
+
+    .coments-card{
+        max-height: 500px;
+    }
+
+   .coments-card h3,
+   .coments-card p{
+    text-align: left;
+    margin-left: 10px;
+   }
+
+   .coments-card .coment .coment-content{
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .coments-card .coment p{
+    color: rgb(177, 175, 175);
+    margin-left: 10px;
+   }
+
+   
+.coments-card .coment span{
+    background-color: red;
+    text-align: center;
+    border-radius: 10px;
+    width: 20%;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+
+.coments-card .coment .pendiente{
+    background-color: rgb(255, 98, 98);
+}
+
+.coments-card .coment .recibido{
+    background-color: lightgray;
+}
+
+.coments-card .coment .entregado{
+    background-color: lightgreen;
 }
