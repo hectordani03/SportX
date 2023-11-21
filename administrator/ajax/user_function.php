@@ -139,13 +139,33 @@ Verificar cuenta </a>
 <meta charset="UTF8" />
 </head>
 <body>
-<p>Su número de cuenta es:' . $employee_key . '</p>
-<p>Su contraseña es:' . $password . '</p>
-<p> LOG IN:</p>
-
-<p> <a href="http://localhost/SportX/administrator/login.php' . '">
-Verificar cuenta </a> 
-</p>  
+<p>Estimado ' .$name. ',</p>
+<p>Es un placer darle la bienvenida a SportX. Estamos emocionados de tenerte como parte de nuestra comunidad.</p>
+<p>A continuación, encontrará los detalles de su cuenta:</p>
+<ul>
+    <li>Su número de cuenta es: ' . $employee_key . '</li>
+    <li>Su contraseña es: ' . $password . '</li>
+    <li>Enlace de inicio de sesión: http://localhost/SportX/administrator/login.php</li>
+</ul>
+<p>Instrucciones para comenzar:</p>
+<ol>
+    <li>Utilice el enlace de inicio de sesión proporcionado para acceder a su cuenta.</li>
+    <li>Ingrese su número de cuenta y la contraseña temporal cuando se le solicite.</li>
+    <li>Una vez que haya iniciado sesión, se le pedirá que cambie su contraseña por motivos de seguridad. Siga las instrucciones para establecer una contraseña segura y memorable.</li>
+</ol>
+<p>Importante</p>
+<ul>
+    <li>Guarde su número de cuenta en un lugar seguro y no comparta su contraseña con nadie.</li>
+    <li>Si tiene alguna pregunta o encuentra algún problema durante el proceso de inicio de sesión, no dude en ponerse en contacto con nuestro equipo de soporte técnico en equiposportx@gmail.com o llamando al 314 100 8320.</li>
+</ul>
+<p>Gracias por confiar en SportX. ¡Esperamos que disfrute utilizando nuestro Sistema!</p>
+<p>Atentamente,</p>
+<p>Equipo SportX</p>
+<p>Desde: Area administrativa</p>
+<p>SportX&copy; 2023</p>
+<p>equiposportx@gmail.com</p>
+<p>314 100 8320</p>
+<p>http://localhost/SportX/administrator/login.php</p>
 </body>
 </html>
 ';

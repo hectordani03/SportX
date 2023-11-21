@@ -366,36 +366,14 @@ footer p{
     fill: #011ea0;
     margin-right: 10px;
     border: thin solid white;
-}
-
-.siguenos-footer :nth-child(2){
-    width: 50px;
-    height: 50px;
-    padding: 7px;
-    fill: white;
-    background-color: #285AEB;
-    border: 2px solid white;
-}
-
-.siguenos-footer :nth-child(3){
-    background: #d6249f;
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    /* margin-bottom: 20px; */
+    margin-top: 10px;
 }
 
 .siguenos-footer svg:hover{
     fill: #1a1717;
     background-color: white;
 }
-
-.siguenos-footer :nth-child(3){
-    width: 50px;
-    height: 50px;
-    padding: 7px;
-    fill: white;
-    /* background-color: #285AEB; */
-    border: 2px solid white;
-}
-
 
 .siguenos-footer :nth-child(1):hover{
     /* fill: white; */
@@ -409,8 +387,6 @@ footer p{
   }
   
 
-.siguenos-footer :nth-child(2):hover,
-.siguenos-footer :nth-child(3):hover,
 .siguenos-footer :nth-child(1):hover{
     animation: mymove 1s;
     animation-fill-mode: forwards;
@@ -418,6 +394,17 @@ footer p{
     background-color: #1a1717;
 }
 
+footer .data-footer{
+    /* margin: 15px; */
+    margin-top: 20px;
+    margin-bottom: -10px;
+}
+
+footer .sections-footer{
+    color: #18171c;
+    text-decoration: none;
+    margin: 0px 3px;
+}
 
 video{
     position: absolute;
@@ -613,7 +600,7 @@ html{
 
 main{
     max-width: 92%;
-    margin-left: 120px;
+    margin-left: 160px;
     position: relative;
     top: 0;
     margin-top: 150px;
@@ -803,7 +790,10 @@ main{
     right: 10px;
     margin-top: 10px;
     max-width: 15%;
+    background-color: rgb(150, 149, 149);
     background-color: #18171c;
+    background-color: rgb(2, 194, 2);
+
     border: none;
 }
 
@@ -860,7 +850,16 @@ main{
     border: none;
 }
 
-.grafica #piechart rect{
+.grafica #piechart rect,
+.grafica #piechart4 rect,
+.grafica #piechart1 rect,
+.grafica #piechart2 rect,
+.grafica #piechart3 rect,
+.grafica #piechart5 rect,
+.grafica #piechart6 rect,
+.grafica #piechart7 rect,
+.grafica #piechart8 rect,
+.grafica #piechart9 rect{
     fill: none !important;
 }
 
@@ -872,23 +871,21 @@ main{
 
 
 
-/* The switch - the box around the slider */
+/* Estilos para el botón de modo oscuro */
 .switch-container {
     position: relative;
     display: inline-block;
     width: 3.5em;
     height: 2em;
-  }
-  
-  /* Hide default HTML checkbox */
-  .switch-container input {
+}
+
+.switch-container input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .switch-container .slider {
+}
+
+.switch-container .slider {
     --background: linear-gradient(to right, #090613ef, #18151f);
     position: absolute;
     cursor: pointer;
@@ -896,13 +893,12 @@ main{
     left: 0;
     right: 0;
     bottom: 0;
-    /* background: var(--background); */
-    background-color: lightgray;
+    background-color: rgb(136, 224, 253);
     transition: background-color 0.5s;
     border-radius: 30px;
-  }
-  
-  .switch-container .slider:before {
+}
+
+.switch-container .slider:before {
     position: absolute;
     content: "";
     height: 1.4em;
@@ -914,17 +910,17 @@ main{
     background: var(--background);
     transition: transform 0.5s, box-shadow 0.5s;
     border: var(--background);
-  }
-  
-  .switch-container input:checked + .slider {
-    background:var(--background);
-    border: var(--background);
-  }
-  
-  .switch-container input:checked + .slider:before {
+}
+
+.dark-mode input:checked + .slider {
+    background: linear-gradient(to right, #090613ef, #18151f);
+    border: linear-gradient(to right, #090613ef, #18151f);
+}
+
+.dark-mode input:checked + .slider:before {
     transform: translateX(100%);
     box-shadow: inset 8px -4px 0px 0px #f8f8f4;
-  }
+}
 
   header {
     position: fixed;
@@ -979,13 +975,299 @@ main{
 
 
 .coments-card .coment .pendiente{
-    background-color: rgb(255, 98, 98);
+    background-color: rgb(249, 66, 66);
 }
 
 .coments-card .coment .recibido{
-    background-color: lightgray;
+    background-color: rgb(184, 184, 184);
 }
 
 .coments-card .coment .entregado{
-    background-color: lightgreen;
+    background-color: rgb(99, 241, 99);
 }
+
+.graphic-container h1{
+    position: relative;
+    font-size: 50px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+
+.graphic-container .prod-graphic{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.graphic-container .col-12{
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.graphic-container .prod-sports .col-lg-4,
+.graphic-container .prod-sports .col-xl-4{
+    width: 450px !important;
+}
+
+.graphic-container .prod-sports .wa{
+    margin-left: 160px;
+}
+
+.graphic-container .prod-sports div{
+    margin-bottom: 20px;
+}
+
+.graphic-container .prod-sports h1{
+    margin-bottom: 30px;
+}
+
+.dark-mode{
+    background: none;
+}
+
+.data-footer a:hover{
+    cursor: pointer;
+}
+
+.top-card{
+    margin-bottom: 12px;
+    padding-bottom: 7px;
+}
+
+.bottom-card{
+    padding-top: 7px;
+}
+
+.pdf-buttons{
+    display: flex;
+    flex-direction: column;
+}
+.pdf-buttons a{
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(142, 142, 142);
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+
+  .cards-content .bell-false{
+    display: none;
+  }
+
+
+  /* TO DO LIST */
+
+  
+    .container-toDo h1 {
+    text-align: center;
+    color: darkslategrey;
+    }
+  
+
+  .container-toDo {
+    /* margin-top: 30px; */
+    margin-bottom: 30px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    padding: 30px;
+  }
+  
+  .search {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+  
+  .search form {
+    display: flex;
+  }
+  
+  .search input {
+    padding: 15px 10px;
+    outline: none;
+    width: 400px;
+  }
+  
+  .li-container {
+    background-color: white;
+    width: 100%;
+    color: darkslategray;
+    margin-top: 20px;
+  }
+  
+  .li-container ul {
+    padding: 0;
+  }
+  
+  .li-container li {
+    list-style: none;
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-top: 15px;
+    display: flex;
+  }
+  
+  .li-container li p {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .btn-delete {
+    margin-left: auto;
+    border: none;
+    background-color: #e31746;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 10%;
+    font-size: 1.2em;
+  }
+  
+  .btn-delete:hover {
+    cursor: pointer;
+    background-color: #ff1b50;
+  }
+  
+  .btn-add {
+    padding: 5px 15px;
+    border: none;
+    color: white;
+    font-family: fantasy;
+    background-color: teal;
+    font-size: 1.4rem;
+    outline: none;
+  }
+  
+  .btn-add:hover {
+    cursor: pointer;
+    background-color: darkcyan;
+  }
+  
+  .empty {
+    color: darkslategrey;
+  }
+
+  .custom-swal-container {
+    max-width: none !important; /* Anula el ancho máximo predeterminado de SweetAlert */
+    max-height: none !important; /* Anula la altura máxima predeterminada de SweetAlert */
+  }
+
+  .support-section form{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .support-section input,
+  .support-section textarea,
+  .support-section button{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border-color: rgb(174, 173, 173);
+    margin-bottom: 10px;
+  }
+
+  .support-section textarea,
+  .support-section button{
+    margin-bottom: 20px;
+    resize: none;
+  }
+
+  .support-section button{
+    border-radius: 10px;
+    border-color: lightgray;
+  }
+
+  .support-section .support-numbers,
+  .support-section .support-hours{
+    /* background-color: rgb(206, 204, 204); */
+    border-radius: 10px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0px;
+  }
+
+  .support-section .support-numbers{
+    border-bottom: lightgray;
+  }
+  
+  .support-section .support-email{
+        width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 10px;
+    border-radius: 10px;
+  }
+
+  .support-section hr{
+    background-color: gray; /* Puedes usar cualquier color hexadecimal, RGB, o nombre de color */
+    height: 2px; /* Ajusta la altura según sea necesario */
+    border: none; /* Elimina el borde predeterminado */
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(18, 203, 18);
+  }
+
+
+
+
+
+  .loader {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .bar {
+    display: inline-block;
+    width: 3px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 10px;
+    animation: scale-up4 1s linear infinite;
+    background-color: rgb(50, 50, 50);
+  }
+  
+  .bar:nth-child(2) {
+    height: 35px;
+    margin: 0 5px;
+    animation-delay: .25s;
+  }
+  
+  .bar:nth-child(3) {
+    animation-delay: .5s;
+  }
+  
+  @keyframes scale-up4 {
+    20% {
+      background-color: #ffff;
+      transform: scaleY(1.5);
+    }
+  
+    40% {
+      transform: scaleY(1);
+    }
+  }

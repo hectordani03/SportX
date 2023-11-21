@@ -1,53 +1,298 @@
-function dataReadyCallback(data) {
-    // Ahora puedes acceder a 'data' después de que se haya cargado
-    console.log(data);
 
-    // También puedes utilizar 'data' en otras funciones o manipularlo según sea necesario
-}
+// document.addEventListener("DOMContentLoaded", function () {
+//     const d = document;
+//     const cartas = d.querySelectorAll(".card");
+//     const cartasvg = d.querySelectorAll(".svg-color");
+//     const crudTitle = d.querySelectorAll("h1");
+//     const crudInput = d.querySelectorAll("input");
+//     const crudTable = d.querySelectorAll("tbody td");
+//     const crudModal = d.querySelectorAll(".modal-body");
+//     const crudModalTitle = d.querySelectorAll(".modal-header");
+//     const crudModalInput = d.querySelectorAll(".modal-body input");
+//     const footer = d.querySelector("footer");
+//     const footerData = d.querySelectorAll(".data-footer a");
+
+//     // Verifica el modo oscuro al cargar la página
+//     actualizarModo();
+
+//     d.addEventListener("click", e => {
+//         if (e.target.matches(".dark-mode") || e.target.matches(".dark-mode input")) {
+//             // Cambia el modo oscuro al hacer clic en el interruptor
+//             toggleModoOscuro();
+//             // Actualiza el modo
+//             actualizarModo();
+//         }
+//     });
+
+//     function toggleModoOscuro() {
+//         // Cambia el valor de modo oscuro en localStorage
+//         const modoOscuro = obtenerModoOscuro();
+//         guardarModoOscuro(!modoOscuro);
+//     }
+
+//     function obtenerModoOscuro() {
+//         // Devuelve true si el modo oscuro está habilitado, false en caso contrario
+//         return localStorage.getItem("modoOscuro") === "true";
+//     }
+
+//     function guardarModoOscuro(modo) {
+//         // Guarda el estado del modo oscuro en localStorage
+//         localStorage.setItem("modoOscuro", modo);
+//     }
+
+//     function actualizarModo() {
+//         const body = d.querySelector("body");
+//         const switchInput = d.querySelector(".dark-mode input");
+
+//         // Obtiene el estado actual del modo oscuro
+//         const modoOscuro = obtenerModoOscuro();
+
+//         // Aplica estilos según el modo oscuro
+//         if (modoOscuro) {
+//             // Modo oscuro
+//             body.style.backgroundColor = "#222";
+//             // ... (otros estilos para modo oscuro)
+
+//             // Cambia el color del interruptor para reflejar el modo oscuro
+//             switchInput.style.backgroundColor = "black";
+//             switchInput.style.border = "2px solid white";
+//             cartas.forEach(carta => {
+//                 carta.style.backgroundColor = "rgb(57, 57, 57)";
+//                 carta.style.color = "white";
+//             });
+//             cartasvg.forEach(svg =>{
+//                 svg.style.fill ="white"
+//             })
+//             crudTitle.forEach(title =>{
+//                 title.style.color ="white"
+//             })
+//             crudInput.forEach(input =>{
+//                 input.style.backgroundColor ="rgb(57, 57, 57)"
+//                 input.style.color ="white"
+//                 input.style.border ="rgb(57, 57, 57)"
+//             })
+//             crudTable.forEach(td =>{
+//                 td.style.backgroundColor ="rgb(57, 57, 57)"
+//                 td.style.color ="lightgray"
+//             })
+//             crudModal.forEach(modal =>{
+//                 modal.style.backgroundColor ="rgb(57, 57, 57)"
+//                 modal.style.color ="lightgray"
+//             })
+//             crudModalTitle.forEach(modalTitle =>{
+//                 modalTitle.style.backgroundColor ="rgb(57, 57, 57)"
+//                 modalTitle.style.color ="lightgray"
+//             })
+//             crudModalInput.forEach(modalInput =>{
+//                 modalInput.style.backgroundColor ="rgb(87, 87, 87)"
+//                 modalInput.style.color ="white"
+//             })
+//             footer.style.backgroundColor = "rgb(57, 57, 57)";
+//             footer.style.color ="white"
+
+//             footerData.forEach(dataA =>{
+//                 dataA.style.color ="white"
+//             })
+//         } else {
+//             // Modo claro
+//             body.style.backgroundColor = "white";
+//             // ... (otros estilos para modo claro)
+
+//             // Cambia el color del interruptor para reflejar el modo claro
+//             switchInput.style.backgroundColor = "rgb(136, 224, 253)";
+//             switchInput.style.border = "2px solid rgb(136, 224, 253)";
+//             switchInput.style.transition = "none";
+//             cartas.forEach(carta => {
+//                 carta.style.backgroundColor = "white";
+//                 carta.style.color = "black";
+//             });
+//             cartasvg.forEach(svg =>{
+//                 svg.style.fill ="black"
+//             })
+//             crudTitle.forEach(title =>{
+//                 title.style.color ="black"
+//             })
+//             crudInput.forEach(input =>{
+//                 input.style.backgroundColor ="lightgray"
+//                 input.style.color ="black"
+//                 input.style.border ="white"
+//             })
+//             crudTable.forEach(td =>{
+//                 td.style.backgroundColor ="white"
+//                 td.style.color ="black"
+//             })
+//             crudModal.forEach(modal =>{
+//                 modal.style.backgroundColor ="white"
+//                 modal.style.color ="black"
+//             })
+//             crudModalTitle.forEach(modalTitle =>{
+//                 modalTitle.style.backgroundColor ="white"
+//                 modalTitle.style.color ="black"
+//             })
+//             crudModalInput.forEach(modalInput =>{
+//                 modalInput.style.backgroundColor ="white"
+//                 modalInput.style.color ="black"
+//             })
+//             footer.style.backgroundColor = "lightgray";
+//             footer.style.color ="black"
+
+//             footerData.forEach(dataA =>{
+//                 dataA.style.color ="black"
+//             })
+//         }
+        
+//         switchInput.checked = modoOscuro;
+
+        
+//     }
+// });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const d = document;
+    const body = d.querySelector("body");
     const cartas = d.querySelectorAll(".card");
     const cartasvg = d.querySelectorAll(".svg-color");
-    
-    dataReadyCallback(data);
+    const crudTitle = d.querySelectorAll("h1");
+    const crudInput = d.querySelectorAll("input");
+    const crudTable = d.querySelectorAll("tbody td");
+    const crudModal = d.querySelectorAll(".modal-body");
+    const crudModalTitle = d.querySelectorAll(".modal-header");
+    const crudModalInput = d.querySelectorAll(".modal-body input");
+    const footer = d.querySelector("footer");
+    const footerData = d.querySelectorAll(".data-footer a");
+    const switchInput = d.querySelector(".dark-mode input");
+    const userContainer = d.querySelector(".container");
 
-    let modoOscuro = localStorage.getItem("modoOscuro") === "true"; // Inicialmente, obtenemos el valor almacenado en localStorage
+    // Verifica el modo oscuro al cargar la página
     actualizarModo();
 
-    d.addEventListener("click", e => {
+    d.addEventListener("click", (e) => {
         if (e.target.matches(".dark-mode") || e.target.matches(".dark-mode input")) {
-            modoOscuro = !modoOscuro; // Invertimos el modo al hacer clic
+            // Cambia el modo oscuro al hacer clic en el interruptor
+            toggleModoOscuro();
+            // Actualiza el modo
             actualizarModo();
-            localStorage.setItem("modoOscuro", modoOscuro); // Guardamos el estado en localStorage
         }
     });
 
+    function toggleModoOscuro() {
+        // Cambia el valor de modo oscuro en localStorage
+        const modoOscuro = obtenerModoOscuro();
+        guardarModoOscuro(!modoOscuro);
+    }
+
+    function obtenerModoOscuro() {
+        // Devuelve true si el modo oscuro está habilitado, false en caso contrario
+        return localStorage.getItem("modoOscuro") === "true";
+    }
+
+    function guardarModoOscuro(modo) {
+        // Guarda el estado del modo oscuro en localStorage
+        localStorage.setItem("modoOscuro", modo);
+    }
+
     function actualizarModo() {
-        const body = d.querySelector("body");
+        const modoOscuro = obtenerModoOscuro();
 
         if (modoOscuro) {
+            // Modo oscuro
             body.style.backgroundColor = "#222";
-            cartas.forEach(carta => {
-                // carta.style.backgroundColor = "rgb(203, 201, 201)";
-                // cartasvg.style.fill = "white";
+            switchInput.style.backgroundColor = "black";
+            switchInput.style.border = "2px solid white";
+            cartas.forEach((carta) => {
                 carta.style.backgroundColor = "rgb(57, 57, 57)";
                 carta.style.color = "white";
             });
-            cartasvg.forEach(svg =>{
-                svg.style.fill ="white"
+            cartasvg.forEach((svg) => {
+                svg.style.fill = "white";
+            });
+            crudTitle.forEach(title =>{
+                title.style.color ="white"
+            })
+            crudInput.forEach(input =>{
+                input.style.backgroundColor ="rgb(57, 57, 57)"
+                input.style.color ="white"
+                input.style.border ="rgb(57, 57, 57)"
+            })
+            crudTable.forEach(td =>{
+                td.style.backgroundColor ="rgb(57, 57, 57)"
+                td.style.color ="lightgray"
+            })
+            crudModal.forEach(modal =>{
+                modal.style.backgroundColor ="rgb(57, 57, 57)"
+                modal.style.color ="lightgray"
+            })
+            crudModalTitle.forEach(modalTitle =>{
+                modalTitle.style.backgroundColor ="rgb(57, 57, 57)"
+                modalTitle.style.color ="lightgray"
+            })
+            crudModalInput.forEach(modalInput =>{
+                modalInput.style.backgroundColor ="rgb(87, 87, 87)"
+                modalInput.style.color ="white"
+            })
+            footer.style.backgroundColor = "rgb(57, 57, 57)";
+            footer.style.color ="white"
+
+            footerData.forEach(dataA =>{
+                dataA.style.color ="white"
             })
         } else {
+            // Modo claro
             body.style.backgroundColor = "white";
-            cartas.forEach(carta => {
+            switchInput.style.backgroundColor = "rgb(136, 224, 253)";
+            switchInput.style.border = "2px solid rgb(136, 224, 253)";
+            // Elimina la transición en modo claro
+            switchInput.style.transition = "none";
+            cartas.forEach((carta) => {
                 carta.style.backgroundColor = "white";
                 carta.style.color = "black";
             });
-            cartasvg.forEach(svg =>{
-                svg.style.fill ="black"
+            cartasvg.forEach((svg) => {
+                svg.style.fill = "black";
+            });
+            crudTitle.forEach(title =>{
+                title.style.color ="black"
+            })
+            crudInput.forEach(input =>{
+                input.style.backgroundColor ="lightgray"
+                input.style.color ="black"
+                input.style.border ="white"
+            })
+            crudTable.forEach(td =>{
+                td.style.backgroundColor ="white"
+                td.style.color ="black"
+            })
+            crudModal.forEach(modal =>{
+                modal.style.backgroundColor ="white"
+                modal.style.color ="black"
+            })
+            crudModalTitle.forEach(modalTitle =>{
+                modalTitle.style.backgroundColor ="white"
+                modalTitle.style.color ="black"
+            })
+            crudModalInput.forEach(modalInput =>{
+                modalInput.style.backgroundColor ="white"
+                modalInput.style.color ="black"
+            })
+            footer.style.backgroundColor = "lightgray";
+            footer.style.color ="black"
+
+            footerData.forEach(dataA =>{
+                dataA.style.color ="black"
             })
         }
-    }
-    
-});
 
+        switchInput.checked = modoOscuro;
+
+        // Añade la transición solo si el cambio es de oscuro a claro
+        if (!modoOscuro) {
+            // Agrega la clase para la animación
+            switchInput.classList.add("animacion-color");
+            // Elimina la clase después de un tiempo suficiente para la animación
+            setTimeout(() => {
+                switchInput.classList.remove("animacion-color");
+            }, 500); // Ajusta el tiempo según la duración de la animación en milisegundos
+        }
+    }
+});

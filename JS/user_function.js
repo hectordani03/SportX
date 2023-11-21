@@ -153,7 +153,6 @@ $("#modify").click(function () {
     },
   });
 });
-
 $("#add").click(function () {
   var add = $("#add_user").serialize();
   $.ajax({
@@ -161,6 +160,44 @@ $("#add").click(function () {
     type: "POST",
     data: add,
     success: function (variable) {
+      if (variable === "success") {
+        const Toast = Swal.mixin({
+          toast: true,
+          title: "¡Usuario agregado con exito!",
+          position: "bottom-end",
+          showConfirmButton: false,
+          timer: 3000,
+          showCloseButton: true,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+            toast.style.backgroundColor = 'rgb(18, 203, 18)';
+            toast.style.color = '#ffffff';
+          }
+        });
+
+        Toast.fire();
+      } else {
+        // En caso de que la respuesta no sea "success", puedes manejar otros casos aquí
+        const Toast = Swal.mixin({
+          toast: true,
+          title: "¡Usuario agregado con exito!",
+          position: "bottom-end",
+          showConfirmButton: false,
+          timer: 3000,
+          showCloseButton: true,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+            toast.style.backgroundColor = 'rgb(18, 203, 18)';
+            toast.style.color = '#ffffff';
+          }
+        });
+
+        Toast.fire();
+      }
       $("#adm").load("../administrator/user.php #adm");
       $("#adduser").hide();
       $("body").removeClass("modal-open");
@@ -176,6 +213,24 @@ $("#delete").click(function () {
     type: "POST",
     data: del,
     success: function (variable) {
+      const Toast = Swal.mixin({
+        toast: true,
+        title: "¡Usuario Eliminado exitosamente!",
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 3000,
+        showCloseButton: true,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.onmouseenter = Swal.stopTimer;
+          toast.onmouseleave = Swal.resumeTimer;
+          toast.style.backgroundColor = '#dc3545';
+          toast.style.color = '#ffffff';
+        }
+      });
+
+      Toast.fire();
+
       $("#adm").load("../administrator/user.php #adm");
       $("#deleteuser").hide();
       $("body").removeClass("modal-open");

@@ -28,21 +28,6 @@
         <aside id="miAside" class=" scroll-animation">
             <div class="menu">
                 <ul>
-                    <!-- <li class="temas"><a href="#"></a>Footwear</li>
-                    <li class="subtemas"><a href="./products-pages/footwear.php">Man</a></li>
-                    <li class="subtemas"><a href="#">Woman</a></li>
-                    <li class="subtemas"><a href="#">Kids</a></li>
-                    <li class="temas"><a href="#"></a>Jerseys</li>
-                    <li class="subtemas"><a href="#">Man</a></li>
-                    <li class="subtemas"><a href="#">Woman</a></li>
-                    <li class="subtemas"><a href="#">Kids</a></li>
-                    <li class="temas"><a href="#"></a>Bottoms</li>
-                    <li class="subtemas"><a href="#">Man</a></li>
-                    <li class="subtemas"><a href="#">Woman</a></li>
-                    <li class="subtemas"><a href="#">Kids</a></li>
-                    <li class="temas"><a href="#"></a>Balls</li>
-                    <li class="temas"><a href="#"></a>Accessories</li> -->
-
                     <li class="temas"><a href="#footwear"></a>Footwear</li>
                     <li class="subtemas"><a href="#footman">Man</a></li>
                     <li class="subtemas"><a href="#footwoman">Woman</a></li>

@@ -18,26 +18,40 @@ include 'template/cabecera.php';
 
 <style>
     .main-prod{
-        margin-top: 10px;
+        margin-top: 90px;
     }
 
 </style>
 
 
 <body>
+    <script>
+        let timerInterval;
+Swal.fire({
+  title: "Cargando productos",
+  html: "Espere, por favor!",
+  timer: 1000,
+  timerProgressBar: true,
+  didOpen: (alert) => {
+    Swal.showLoading();
+    const timer = Swal.getPopup().querySelector("b");
+    timerInterval = setInterval(() => {
+      timer.textContent = `${Swal.getTimerLeft()}`;
+    }, 100);
+    // alert.style.backgroundColor = 'rgb(50, 50, 50)'; // Cambia el color de fondo a tu preferencia
+    // alert.style.color = '#ffffff'; // Cambia el color del texto si es necesario
+  },
+  willClose: () => {
+    clearInterval(timerInterval);
+  }
+}).then((result) => {
+  /* Read more about handling dismissals below */
+  if (result.dismiss === Swal.DismissReason.timer) {
+    console.log("Productos cargados");
+  }
+});
+    </script>    
     <main id="main" class="main-prod">
-        <a href="./user.php" class="user-btn btn-su">
-                <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-            </svg><span>Hector Daniel</span>
-        </a>
-        <button class="dark-mode btn-success">
-            <label class="switch-container">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </button>
         <h1>Products List</h1>
         <br>
         <div>
@@ -82,7 +96,7 @@ include 'template/cabecera.php';
             ?>
             <tbody>
                 <tr>
-                    <th scope="row"><?php echo $product_loop['id'] ?></th>
+                    <td scope="row"><?php echo $product_loop['id'] ?></td>
                     <td><?php echo $product_loop['category'] ?></td>
                     <td><?php echo $product_loop['product_type'] ?></td>
                     <td><?php echo $product_loop['section'] ?></td>

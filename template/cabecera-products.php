@@ -26,7 +26,7 @@ require '../config/db.php';
 <body>
     <section class="header header-inicio scroll-animation">
         <!-- <img class="scroll-animation" src="../assets/logo sportX-2.png" alt=""> -->
-        <a href="../index.php"><img class="scroll-animation img-cabecera" src="../assets/logo sportX-2.png" alt=""></a>
+        <a href="../administrator/index.php"><img class="scroll-animation img-cabecera" src="../assets/logo sportX-2.png" alt=""></a>
         <nav class="nav-inicio">
             <div class="nav-links nav-links-2" id="navlinks">
                 <div class="dropdown">
